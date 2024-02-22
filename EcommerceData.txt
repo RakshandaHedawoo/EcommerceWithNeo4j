@@ -1,0 +1,74 @@
+CREATE
+
+(RakshandaH:PERSON{name:"Rakshanda Hedawoo", age: 24, sex:"Female"}),
+(SrinidhiR:PERSON{name:"Srinidhi Reddy", age: 24, sex:"Female"}),
+(SrinivasC:PERSON{name:"Srinivas Chintalapti", age: 28, sex:"Male"}),
+(DhanuN:PERSON{name:"Dhanu Neelapu", age: 25, sex:"Female"}),
+(BharathS:PERSON{name:"Bharath Sreekumar", age: 25, sex:"Male"}),
+(ShreeS:PERSON{name:"Shreelakshmi Suresh", age: 24, sex:"Female"}),
+(RutujaS:PERSON{name:"Rutuja Samant", age: 23, sex:"Female"}),
+(RohanK:PERSON{name:"Rohan Kokkula", age: 25, sex:"Male"}),
+(ShubhamS:PERSON{name:"Shubham Suryavanshi", age: 24, sex:"Male"}),
+(AniketS:PERSON{name:"Aniket Singh", age: 25, sex:"Male"}),
+(KinjalB:PERSON{name:"Kinjal Bhagat", age: 25, sex:"Female"}),
+
+(Board:PRODUCT{name:"Wooden Chopping Board",soldby:"Mosaba",price:20,rating:4.2}),
+(Jacket:PRODUCT{name:"Leather Jacket",soldby:"H&M",price:30,rating:4.0}),
+(Wallet:PRODUCT{name:"Men's Wallet",soldby:"Zara",price:10,rating:4.4}),
+(Sweater:PRODUCT{name:"Crochet Sweater",soldby:"Zara",price:25,rating:4.4}),
+(Boots:PRODUCT{name:"Winter Boots",soldby:"H&M",price:40,rating:4.2}),
+(Shorts:PRODUCT{name:"Summer Shorts",soldby:"Zara",price:15,rating:4.3}),
+(Trouser:PRODUCT{name:"Formal Trousers",soldby:"H&M",price:35,rating:4.4}),
+(Dress:PRODUCT{name:"A-line dress",soldby:"H&M",price:40,rating:4.2}),
+
+
+(MD:STATE{Name:"Maryland",Zipcode:40271}),
+(NY:STATE{Name:"New York",Zipcode:25410}),
+(TX:STATE{Name:"Texas",Zipcode:41236}),
+(IL:STATE{Name:"Illinois",Zipcode:85213}),
+(CA:STATE{Name:"California",Zipcode:45632}),
+
+
+(Amazon:SOCIALMEDIA{name:"Amazon"}),
+(FlipKart:SOCIALMEDIA{name:"Flipkart"}),
+(Temu:SOCIALMEDIA{name:"Temu"}),
+
+
+(RakshandaH)-[:RESIDES_IN]->(MD),
+(SrinidhiR)-[:RESIDES_IN]->(MD),
+(SrinivasC)-[:RESIDES_IN]->(MD),
+(DhanuN)-[:RESIDES_IN]->(NY),
+(BharathS)-[:RESIDES_IN]->(NY),
+(ShreeS)-[:RESIDES_IN]->(NY),
+(RutujaS)-[:RESIDES_IN]->(TX),
+(RohanK)-[:RESIDES_IN]->(TX),
+(ShubhamS)-[:RESIDES_IN]->(IL),
+(AniketS)-[:RESIDES_IN]->(CA),
+(KinjalB)-[:RESIDES_IN]->(CA),
+
+
+(RakshandaH)-[:ORDERS{type:"purchased"}]->(Board),
+(SrinidhiR)-[:ORDERS{type:"wishlist"}]->(Dress),
+(SrinivasC)-[:ORDERS{type:"purchased"}]->(Jacket),
+(DhanuN)-[:ORDERS{type:"purchased"}]->(Boots),
+(BharathS)-[:ORDERS{type:"purchased"}]->(Sweater),
+(ShreeS)-[:ORDERS{type:"wishlist"}]->(Trouser),
+(RutujaS)-[:ORDERS{type:"purchased"}]->(Dress),
+(RohanK)-[:ORDERS{type:"purchased"}]->(Jacket),
+(ShubhamS)-[:ORDERS{type:"purchased"}]->(Wallet),
+(AniketS)-[:ORDERS{type:"purchased"}]->(Shorts),
+(KinjalB)-[:ORDERS{type:"wishlist"}]->(Boots),
+
+
+(RakshandaH)-[:USER{type:"customer"}]->(Amazon),
+(SrinidhiR)-[:USER{type:"customer"}]->(Amazon),
+(SrinivasC)-[:USER{type:"seller"}]->(Amazon),
+(DhanuN)-[:USER{type:"customer"}]->(Temu),
+(BharathS)-[:USER{type:"customer"}]->(Temu),
+(ShreeS)-[:USER{type:"customer"}]->(Temu),
+(RutujaS)-[:USER{type:"customer"}]->(FlipKart),
+(RohanK)-[:USER{type:"customer"}]->(FlipKart),
+(ShubhamS)-[:USER{type:"customer"}]->(FlipKart),
+(AniketS)-[:USER{type:"seller"}]->(Temu),
+(KinjalB)-[:USER{type:"customer"}]->(Amazon)
+
